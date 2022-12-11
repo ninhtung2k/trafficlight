@@ -8,16 +8,16 @@ export default function TrafficLight() {
 
     const turnOnNextLight = () => {
        if(lightOn === "red"){
-        setLightOn("yellow")
-        return;
-       }
-
-       if(lightOn === "yellow"){
         setLightOn("green")
         return;
        }
 
        if(lightOn === "green"){
+        setLightOn("yellow")
+        return;
+       }
+
+       if(lightOn === "yellow"){
         setLightOn("red")
         return;
        }
@@ -30,7 +30,7 @@ export default function TrafficLight() {
         <Light color={"yellow"} isOn={lightOn === "yellow"} />
         <Light color={"green"} isOn={lightOn === "green"} />
      </div>
-     <button onClick={turnOnNextLight}>Next</button>
+     <button onClick={turnOnNextLight}>Start</button>
      </div>
     );
 }
